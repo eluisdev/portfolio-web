@@ -1,0 +1,47 @@
+---
+const personalImageAlt = "Miguel Ángel"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4 max-sm:justify-center">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/logoPortafolio.png"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/enrique-luis-barra-paredes-520ba41b9"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Available to work</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white max-sm:text-center"
+  >
+    Hey, I'm eluis<span class="text-yellow-500 font-semibold">dev</span>
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300 max-sm:text-center"
+  >
+    <strong
+      >Software Engineer</strong
+    > from La Paz Bolivia <img class="w-5 inline my-auto mb-[0.19rem]" src="/bolivia.webp"/>. Specialized in the development of unique web applications.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8 max-sm:justify-center">
+    <SocialPill href="mailto:barra.paredes.enrique.luis@gmail.com">
+      <MailIcon class="size-4" />
+      Contact me
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/enrique-luis-barra-paredes-520ba41b9">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+  </nav>
+</div>
