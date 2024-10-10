@@ -1,18 +1,17 @@
 ---
-import GitHub from "./icons/GitHub.astro";
-import Laravel from "./icons/Laravel.astro";
-import Tailwind from "./icons/Tailwind.astro";
-import Link from "./icons/Link.astro";
-import LinkButton from "./LinkButton.astro";
-import React from "./icons/React.astro";
-import Node from "./icons/Node.astro";
-import Typescript from "./icons/Typescript.astro"
+import GitHub from "./icons/GitHub.astro"
+import Laravel from "./icons/Laravel.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import React from "./icons/React.astro"
+import Node from "./icons/Node.astro"
 
 const TAGS = {
   REACT: {
-    name: "React.js",
-    class: "bg-[#070861] text-white",
-    icon: React,
+    name:"React.js",
+    class:"bg-[#070861] text-white",
+    icon: React
   },
   LARAVEL: {
     name: "Laravel",
@@ -25,16 +24,12 @@ const TAGS = {
     icon: Tailwind,
   },
   NODE: {
-    name: "Nodejs",
+    name : "Nodejs",
     class: "bg-[#0a6f6a] text-white",
-    icon: Node,
-  },
-  TYPESCRIPT: {
-    name: "Typescript",
-    class: "bg-[#187beb] text-white",
-    icon: Typescript,
-  },
-};
+    icon: Node
+  }
+
+}
 const PROJECTS = [
   {
     title: "Correspondence system",
@@ -42,8 +37,8 @@ const PROJECTS = [
       "System that I developed in the Medical Technology Degree at UMSA during my internship. The system is focused on keeping track of all the documentation. It was coordinated with the Information and Communications Technology Department of the Universidad Mayor de San Andres.",
     link: "https://docstecmed.umsa.bo/",
     image: "/projects/sistemadoc.png",
-    github: ["https://github.com/eluisdev/TecMedProy"],
-    tags: [TAGS.REACT, TAGS.LARAVEL, TAGS.TAILWIND],
+    github:"",
+    tags: [TAGS.REACT, TAGS.LARAVEL,TAGS.TAILWIND],
   },
   {
     title: "React chat app",
@@ -51,79 +46,63 @@ const PROJECTS = [
       "Instant messaging web application using socket.io with the MERN stack and deployed in render (the backend) and vercel (the frontend). Because we are on free servers, the backend server usually takes a while to complete the first request when it is idle.",
     link: "https://react-chat-app-ecru-iota.vercel.app",
     image: "/projects/react-chat-app-image.png",
-    github: [
-      "https://github.com/eluisdev/react-chat-client",
-      "https://github.com/eluisdev/react-chat-server",
-    ],
-    tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+    github:"",
+    tags: [TAGS.REACT,TAGS.NODE,TAGS.TAILWIND],
   },
-  {
-    title: "Uptask MERN",
-    description:
-      "This is the project that was carried out in the Udemy course by Juan Pablo de la Torrez Valdez, where concepts such as hooks, state management, rendering and the server in a MERN project were seen.",
-    github: [
-      "https://github.com/eluisdev/UptaskMERN"
-    ],
-    tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND],
-  },
-];
+
+]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        {image && (
-          <div class="w-full md:w-1/2">
-            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-              <img
-                alt="Recién llegado vs 5 años en Nueva Zelanda"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                src={image}
-              />
-            </div>
-          </div>
-        )}
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
+    </div>
+  </div>
 
-        <div class={`w-full ${Boolean(image) ? "md:w-1/2 md:max-w-lg" : ""} `}>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
 
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
-            </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github.length >= 1 &&
-                github.map((link) => (
-                  <LinkButton href={link}>
-                    <GitHub class="size-6" />
-                    Code
-                  </LinkButton>
-                ))}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
-          </div>
-        </div>
-      </article>
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
     ))
   }
 </div>
+
+
+
