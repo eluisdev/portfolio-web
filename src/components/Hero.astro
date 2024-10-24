@@ -4,6 +4,8 @@ import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import Cv from "@/components/icons/Cv.astro"
+
 ---
 
 <div class="max-w-xl">
@@ -42,6 +44,10 @@ import SocialPill from "@/components/SocialPill.astro"
     <SocialPill href="https://www.linkedin.com/in/enrique-luis-barra-paredes-520ba41b9">
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="/CV.pdf"> 
+      <Cv class="size-4" />
+      View CV
     </SocialPill>
   </nav>
 </div>

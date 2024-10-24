@@ -31,7 +31,7 @@ const TAGS = {
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-[#0a6f6a] text-white",
+    class: "bg-[#187beb] text-white",
     icon: Typescript,
   },
 };
@@ -56,6 +56,13 @@ const PROJECTS = [
       "https://github.com/eluisdev/react-chat-server",
     ],
     tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Spotify clone",
+    description:
+      "It is a simple Spotify clone where you can see file upload functions with cloudinary and the functionality of a music player.",
+    github: ["https://github.com/eluisdev/spotify-clone-simple"],
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT],
   },
   {
     title: "Uptask MERN",
@@ -88,11 +95,11 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row flex-wrap mb-2 gap-1">
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
                   >
                     <tag.icon class="size-4" />
                     {tag.name}
