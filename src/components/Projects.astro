@@ -36,14 +36,15 @@ const TAGS = {
   },
 };
 const PROJECTS = [
-  {
-    title: "Correspondence system",
+{
+    title: "Notas App",
     description:
-      "System that I developed in the Medical Technology Degree at UMSA during my internship. The system is focused on keeping track of all the documentation. It was coordinated with the Information and Communications Technology Department of the Universidad Mayor de San Andres.",
+      "This is a project inspired by the project done by Udemy instructor Juan Pablo de la Torre Valdez. This project covers key concepts about the use of hooks, state, rendering, good practices and how it is mixed with a backend that uses express with the help of Nodejs and how it relates to React in the frontend. In addition, TypeScript is used in both parts.",
     link: "https://docstecmed.umsa.bo/",
-    image: "/projects/sistemadoc.png",
-    github: ["https://github.com/eluisdev/TecMedProy"],
-    tags: [TAGS.REACT, TAGS.LARAVEL, TAGS.TAILWIND],
+    image: "/projects/AppNotes.png",
+    tag: "Available for everyone",
+    github: ["https://github.com/eluisdev/notas-frontend-mern","https://github.com/eluisdev/notas-backend-mern"],
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
     title: "React chat app",
@@ -51,6 +52,7 @@ const PROJECTS = [
       "Instant messaging web application using socket.io with the MERN stack and deployed in render (the backend) and vercel (the frontend). Because we are on free servers, the backend server usually takes a while to complete the first request when it is idle.",
     link: "https://react-chat-app-ecru-iota.vercel.app",
     image: "/projects/react-chat-app-image.png",
+    tag: "Available for everyone",
     github: [
       "https://github.com/eluisdev/react-chat-client",
       "https://github.com/eluisdev/react-chat-server",
@@ -58,25 +60,30 @@ const PROJECTS = [
     tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
+    title: "Correspondence system",
+    description:
+      "System that I developed in the Medical Technology Degree at UMSA during my internship. The system is focused on keeping track of all the documentation. It was coordinated with the Information and Communications Technology Department of the Universidad Mayor de San Andres.",
+    link: "https://docstecmed.umsa.bo/",
+    tag: "Available only for Bolivia",
+    image: "/projects/sistemadoc.png",
+    github: ["https://github.com/eluisdev/TecMedProy"],
+    tags: [TAGS.REACT, TAGS.LARAVEL, TAGS.TAILWIND],
+  },
+  {
     title: "Spotify clone",
     description:
       "It is a simple Spotify clone where you can see file upload functions with cloudinary and the functionality of a music player.",
     github: ["https://github.com/eluisdev/spotify-clone-simple"],
+    image: "/projects/onlycode.png",
+    tag: "Available for everyone",
     tags: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT],
-  },
-  {
-    title: "Uptask MERN",
-    description:
-      "This is a project carried out in the course of Juan Pablo de la Torre Valdez, on the Udemy platform. In this project, key concepts are seen on the use of hooks, state, rendering, good practices and how it is mixed with a backend that uses express with the help of Nodejs.",
-    github: ["https://github.com/eluisdev/UptaskMERN"],
-    tags: [TAGS.REACT, TAGS.NODE],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github,tag }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         {image && (
           <div class="w-full md:w-1/2">
@@ -110,6 +117,7 @@ const PROJECTS = [
 
             <div class="mt-2 text-gray-700 dark:text-gray-400">
               {description}
+              <span class="block text-yellow-500">{tag}</span>
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github.map((link) => (
