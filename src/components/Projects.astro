@@ -7,6 +7,8 @@ import LinkButton from "./LinkButton.astro";
 import React from "./icons/React.astro";
 import Node from "./icons/Node.astro";
 import Typescript from "./icons/Typescript.astro";
+import Next from "./icons/Next.astro";
+import Nest from "./icons/Nest.astro";
 
 const TAGS = {
   REACT: {
@@ -34,16 +36,29 @@ const TAGS = {
     class: "bg-[#187beb] text-white",
     icon: Typescript,
   },
+  NEXT: {
+    name: "Nextjs",
+    class: "bg-[#76600f] text-white",
+    icon: Next,
+  },
+  NEST: {
+    name: "Nestjs",
+    class: "bg-[#5b220b] text-white",
+    icon: Nest,
+  },
 };
 const PROJECTS = [
-{
+  {
     title: "Notas App",
     description:
       "This is a project inspired by the project done by Udemy instructor Juan Pablo de la Torre Valdez. This project covers key concepts about the use of hooks, state, rendering, good practices and how it is mixed with a backend that uses express with the help of Nodejs and how it relates to React in the frontend. In addition, TypeScript is used in both parts.",
     link: "https://notas-frontend-mern.vercel.app",
     image: "/projects/AppNotes.png",
     tag: "Available for everyone",
-    github: ["https://github.com/eluisdev/notas-frontend-mern","https://github.com/eluisdev/notas-backend-mern"],
+    github: [
+      "https://github.com/eluisdev/notas-frontend-mern",
+      "https://github.com/eluisdev/notas-backend-mern",
+    ],
     tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
@@ -78,12 +93,24 @@ const PROJECTS = [
     tag: "Available for everyone",
     tags: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT],
   },
+  {
+    title: "Next.js and  Nest.js POS",
+    description:
+      "This is a lightweight Point of Sale (POS) system built with modern web technologies, leveraging Nest.js for the backend and Next.js for the frontend. ",
+    github: [
+      "https://github.com/eluisdev/pos-nest-nejs-frontend",
+      "https://github.com/eluisdev/pos-nest-nejs-backend",
+    ],
+    image: "/projects/onlycode.png",
+    tag: "Available for everyone",
+    tags: [TAGS.NEXT, TAGS.NEST, TAGS.TYPESCRIPT],
+  },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github,tag }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github, tag }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         {image && (
           <div class="w-full md:w-1/2">
